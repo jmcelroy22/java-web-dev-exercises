@@ -7,9 +7,12 @@ public class Cat {
     private double weight;
 
     // The biological family for all cat species
+    //This field is not directly accessible by HouseCat since it's private
+    //However, it may be read via the public getter getFamily.
     private String family = "Felidae";
 
     public Cat (double aWeight) {
+
         weight = aWeight;
     }
 
