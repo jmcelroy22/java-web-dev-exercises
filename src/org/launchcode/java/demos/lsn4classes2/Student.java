@@ -41,9 +41,38 @@ public class Student {
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
+    @Override
+    public String toString(){
+        return "Name: " + this.name + " Student ID: " + this.studentId;
+    }
 
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
+
+    @Override
+    //custome equals method
+    public boolean equals(Object toBeCompared){
+        if(toBeCompared == this){
+            return true;
+        }
+        if(toBeCompared == null){
+            return false;
+        }
+        if(toBeCompared.getClass() != this.getClass()){
+            return false;
+        }
+        //cast our object in to something we can actually compare bc we took in an object type and not a student type.
+        //Here we take our toBeCompared object and cast in to our student which will allow our access to all of the
+        //methods that come with student. Then we do our comparison. So to check if they are the same student we
+        //use studentIDs.
+        Student student = (Student) toBeCompared;
+        if(this.studentId == studentId){
+            return true;
+        } else {
+            return false;
+            // ^ same as return this.studentId == student.studentId;
+        }
+    }
 
     public String getName() {
         return name;
@@ -73,17 +102,20 @@ public class Student {
         this.gpa = gpa;
     }
 
-    private void setNumberOfCredits(int numberOfCredits) {
+    void setNumberOfCredits(int numberOfCredits) {
         this.numberOfCredits = numberOfCredits;
     }
 
     public static void main(String[] args) {
-        Student sally = new Student("Sally",1,1,4.0);
-        System.out.println("The Student class works! " + sally.getName() + " is a student!");
-        System.out.println(sally);
-        sally.addGrade(12, 3.5);
-        System.out.println(sally);
-        sally.addGrade(25, 3.8);
-        System.out.println(sally);
+
+
+
+//        Student sally = new Student("Sally",1,1,4.0);
+//        System.out.println("The Student class works! " + sally.getName() + " is a student!");
+//        System.out.println(sally);
+//        sally.addGrade(12, 3.5);
+//        System.out.println(sally);
+//        sally.addGrade(25, 3.8);
+//        System.out.println(sally);
     }
 }
