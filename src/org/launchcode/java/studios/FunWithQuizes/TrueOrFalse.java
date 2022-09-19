@@ -26,18 +26,19 @@ public class TrueOrFalse extends Questions {
     @Override
     public void displayAnswers() {
         System.out.println("True or False");
+    }
 
     @Override
-
-    public int getAnswers () {
+        public int getAnswers(){
         Scanner answer = new Scanner(System.in);
         System.out.println("What is your answer? Type 't' for True and 'f' for False.");
         String userAnswer = answer.nextLine();
+        int result = Integer.parseInt(userAnswer);
         if(userAnswer.indexOf('t') >= 0) {
             if(isCorrectAnswers(true)){
                 return 1;
             } else {
-                return false;
+                return 0;
             }
         }
         else {
@@ -49,5 +50,5 @@ public class TrueOrFalse extends Questions {
         }
         }
 
-    }
+
 }
