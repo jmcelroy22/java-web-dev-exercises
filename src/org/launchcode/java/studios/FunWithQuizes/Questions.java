@@ -28,8 +28,10 @@ public abstract class Questions {
     return this.pointValue;
     }
     public abstract void displayAnswers ();
-    //implement this method on any class that extends the Questions class. To display possible answers.
+    //implement this method on any class that extends the Questions class. To display possible answers. This is
+    //an abstract class we build from.
 
     public abstract int getAnswers();
+    //here bc question class will be extended,
 
 }

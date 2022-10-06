@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class TrueOrFalse extends Questions {
 
+
     private boolean correctAnswers;
 
 

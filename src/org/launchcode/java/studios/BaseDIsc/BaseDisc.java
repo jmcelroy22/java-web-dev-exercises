@@ -3,9 +3,11 @@ package org.launchcode.java.studios.BaseDIsc;
 
 import java.util.ArrayList;
 
-public class BaseDisc {
+public abstract class BaseDisc {
         private String name;
         private int storageCap;
+        private  int remainingCap;
+        private int capacityUsed;
 
         private String discType;
         private ArrayList<String> contents = new ArrayList<>();
@@ -21,7 +23,9 @@ public class BaseDisc {
         }
 
         public String getDiscInfo(){
-            return "Name " + this.name + " Space used: " + this.capicityUsed;
+            return "Name " + this.name + " Space used: " + this.capacityUsed;
         }
-    }
+
+    public abstract void spinDisc();
 }
+
